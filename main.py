@@ -7,6 +7,7 @@ url_default = 'https://rowie-static.s3.us-east-2.amazonaws.com/nfts/k9-temp/k9-c
 parser = argparse.ArgumentParser(description='Script para atualização automatica de urls')
 
 parser.add_argument('-u', '--url', default=url_default, type=str, help='Url de acesso')
+parser.add_argument('-s', '--start', default=0, type=int, help='Inicio da contagem')
 parser.add_argument('-r', '--range', type=int, help='Range de contagem')
 parser.add_argument('-d', '--delay', type=int, help='Tempo de espera para carregamento da página')
 args = parser.parse_args()
@@ -14,10 +15,11 @@ args = parser.parse_args()
 browser= webdriver.Chrome()
 url_parsed = args.url
 counter = args.range
+start_counter = args.start
 wait_time = args.delay
 
 while True:
-    for i in range(counter+1):
+    for i in range(start_counter,counter+1):
         # browser.get(f'https://rowie-static.s3.us-east-2.amazonaws.com/nfts/k9-temp/k9-club/{i}.jpeg')
         browser.get(url_parsed+str(i)+'.jpeg')
         sleep(wait_time)
