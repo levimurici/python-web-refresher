@@ -15,15 +15,12 @@ file_save = args.read
 file_read = args.write
 url_parsed = args.url
 
-def file_write(url, counter):
-    with open(file_save, 'a') as w:
-        to_write = url+str(counter)+'.jpeg'
-        w.write(to_write)
-        w.close()
-
 while True:
     with open(file_read, 'r') as r:
         for i in r:
             line = i
-            file_write(url_parsed, line)
+            with open(file_save, 'a') as w:
+                to_write = url_parsed+str(line)+'.jpeg'
+                w.write(to_write)
+                w.close()
     r.close()
