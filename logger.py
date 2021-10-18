@@ -20,6 +20,7 @@ def main():
     with open(file_read, "r") as f:
         for number in f:
             line = number
+            print(line)
             with open(file_save, "a+") as w:
                 to_write = url_parsed+str(line)+".jpeg"
                 w.write(to_write)
