@@ -15,12 +15,13 @@ file_save = args.read
 file_read = args.write
 url_parsed = args.url
 
-with open(file_read, "r") as f:
-    for number in f:
-        line = number
-        with open(file_save, "a+") as w:
-            to_write = url_parsed+str(line)+".jpeg"
-            w.write(to_write)
-            print(to_write)
-            w.close()
-f.close()
+if __name__ == '__main__':
+    with open(file_read, "r") as f:
+        for number in f:
+            line = number
+            with open(file_save, "a+") as w:
+                to_write = url_parsed+str(line)+".jpeg"
+                w.write(to_write)
+                print(to_write)
+                w.close()
+    f.close()
