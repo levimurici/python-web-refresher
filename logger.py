@@ -19,7 +19,7 @@ url_parsed = args.url
 if __name__ == '__main__':
     with open(file_read, "r") as f:
         for number in f:
-            line = re.search("^[0-9]", number)
+            line = re.search("^[0-99999]", number)
             with open(file_save, "a+") as w:
                 to_write = url_parsed+str(line.group(0))+".jpeg\n"
                 w.write(to_write)
