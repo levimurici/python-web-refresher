@@ -8,11 +8,10 @@ parser = argparse.ArgumentParser(description='Script para atualização automati
 parser.add_argument('-r', '--read', default=file_read, type=str, help='Nome do arquivo com logs')
 parser.add_argument('-w', '--write', default='k9_reg', type=str, help='Nome do arquivo para salvar formatado')
 parser.add_argument('-u', '--url', default=url_default, type=str, help='Url de acesso')
-
 args = parser.parse_args()
 
-file_save = args.read
-file_read = args.write
+file_read = args.read
+file_save = args.write
 url_parsed = args.url
 
 if __name__ == '__main__':
