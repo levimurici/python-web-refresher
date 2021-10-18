@@ -15,7 +15,8 @@ file_save = args.read
 file_read = args.write
 url_parsed = args.url
 
-if __name__ == '__main__':
+
+def main():
     with open(file_read, "r") as f:
         for number in f:
             line = number
@@ -25,3 +26,7 @@ if __name__ == '__main__':
                 print(to_write)
                 w.close()
     f.close()
+
+
+if __name__ == '__main__':
+    main()
