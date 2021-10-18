@@ -1,5 +1,7 @@
 import argparse
+import re
 from time import sleep
+
 
 url_default = 'https://rowie-static.s3.us-east-2.amazonaws.com/nfts/k9-temp/k9-club/'
 file_read = "logger.txt"
@@ -17,8 +19,7 @@ url_parsed = args.url
 if __name__ == '__main__':
     with open(file_read, "r") as f:
         for number in f:
-            line = number
-            print(line)
+            line = re.search("^[0-9]", number)
             with open(file_save, "a+") as w:
                 to_write = url_parsed+str(line)+".jpeg\n"
                 w.write(to_write)
