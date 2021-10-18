@@ -20,7 +20,7 @@ if __name__ == '__main__':
             line = number
             print(line)
             with open(file_save, "a+") as w:
-                to_write = url_parsed+str(line)+".jpeg"
+                to_write = url_parsed+str(line)+".jpeg\n"
                 w.write(to_write)
                 print(to_write)
                 w.close()
