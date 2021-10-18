@@ -21,7 +21,7 @@ if __name__ == '__main__':
         for number in f:
             line = re.search("^[0-9]", number)
             with open(file_save, "a+") as w:
-                to_write = url_parsed+str(line)+".jpeg\n"
+                to_write = url_parsed+str(line.group(0))+".jpeg\n"
                 w.write(to_write)
                 print(to_write)
                 w.close()
