@@ -19,7 +19,7 @@ while True:
     with open(file_read, 'r') as r:
         for i in r:
             line = i
-            with open(file_save, 'a') as w:
+            with open(file_save, 'w+') as w:
                 to_write = url_parsed+str(line)+'.jpeg'
                 w.write(to_write)
                 w.close()
